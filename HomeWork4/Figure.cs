@@ -1,28 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace HomeWork4
 {
-    abstract class  Figure
+    class Figure
     {
-        private string Name;
 
-        public Figure(string name)
+        public virtual bool IsError()
         {
-            this.Name = name;
+            return false;
         }
 
-        public string GetName()
+        public virtual string GetName()
         {
-            return Name; // Console.WriteLine(Name);
+            return "Неизвестная фигура";
         }
 
-        public abstract uint PerimetrOfTheFigure();
+        public virtual double PerimetrOfTheFigure()
+        {
+            return 0;
+        }
 
-        public abstract uint AreaOfTheFigure();
-
+        public virtual double AreaOfTheFigure()
+        {
+            return 0;
+        }
     }
 }

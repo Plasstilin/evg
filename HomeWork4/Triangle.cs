@@ -1,34 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HomeWork4
 {
     class Triangle : Figure
     {
 
-        private uint OneSide;
-        private uint TwoSide;
-        private uint ThreeSide;
+        private double oneSide;
+        private double twoSide;
+        private double threeSide;
 
-        public Triangle(uint OneSide, uint TwoSide, uint ThreeSide, string name) : base(name)
+        public Triangle(double oneSide, double twoSide, double threeSide, string name)
         {
-            this.OneSide = OneSide;
-            this.TwoSide = TwoSide;
-            this.ThreeSide = ThreeSide;
+            this.oneSide = oneSide;
+            this.twoSide = twoSide;
+            this.threeSide = threeSide;
         }
 
-        public override uint PerimetrOfTheFigure()
+        public override bool IsError()
         {
-            return OneSide + TwoSide + ThreeSide;
+            return (oneSide > 0 && twoSide > 0 && threeSide > 0);
         }
 
-        public override uint AreaOfTheFigure()
+        public override string GetName()
         {
-            uint var = this.PerimetrOfTheFigure() / 2;
-            return (uint)(Math.Sqrt(var * ((var - OneSide) * (var - TwoSide) * (var - ThreeSide))));
+            return "Треугольник";
+        }
+
+        public override double PerimetrOfTheFigure()
+        {
+            return oneSide + twoSide + threeSide;
+        }
+
+        public override double AreaOfTheFigure()
+        {
+            double temp = this.PerimetrOfTheFigure() / 2;
+            return (Math.Sqrt(temp * ((temp - oneSide) * (temp - twoSide) * (temp - threeSide))));
         }
     }
 }

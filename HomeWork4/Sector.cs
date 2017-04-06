@@ -1,30 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace HomeWork4
 {
     class Sector : Figure
     {
-        private uint Length;
-        private uint Radius;
+        private double arcsLength;
+        private double radius;
 
-        public Sector(uint Length, uint Radius, string name) : base(name)
+        public Sector(double Length, double Radius, string name)
         {
-            this.Radius = Radius;
-            this.Length = Length;
+            this.radius = Radius;
+            this.arcsLength = Length;
         }
 
-        public override uint PerimetrOfTheFigure()
+        public override bool IsError()
         {
-            return Length * 2 * Radius;
+            return (arcsLength > 0 && radius > 0);
         }
 
-        public override uint AreaOfTheFigure()
+        public override string GetName()
         {
-            return Length * Radius / 2;
+            return "Сектор";
+        }
+
+        public override double PerimetrOfTheFigure()
+        {
+            return arcsLength * 2 * radius;
+        }
+
+        public override double AreaOfTheFigure()
+        {
+            return arcsLength * radius / 2;
         }
     }
 }

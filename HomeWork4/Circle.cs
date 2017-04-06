@@ -1,28 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HomeWork4
 {
     class Circle : Figure
     {
-        private uint Radius;
+        private double radius;
 
-        public Circle(uint radius, string name) : base(name)
+        public Circle(double radius, string name)
         {
-            this.Radius = radius;
+            this.radius = radius;
         }
 
-        public override uint PerimetrOfTheFigure()
+        public override bool IsError()
         {
-            return 2 * (uint)(Math.PI) * Radius;
+            return (radius > 0);
         }
 
-        public override uint AreaOfTheFigure()
+        public override string GetName()
         {
-            return (uint)((Math.PI) * Math.Pow(Radius, 2));
+            return "Круг";
+        }
+
+        public override double PerimetrOfTheFigure()
+        {
+            return 2 * (Math.PI) * radius;
+        }
+
+        public override double AreaOfTheFigure()
+        {
+            return ((Math.PI) * Math.Pow(radius, 2));
         }
     }
 }

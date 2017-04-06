@@ -1,30 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace HomeWork4
 {
     class Rectangle : Figure
     {
-        private uint Length;
-        private uint Widthe;
+        private double length;
+        private double widthe;
 
-        public Rectangle(uint length, uint width, string name) : base(name)
-        {
-            this.Length = length;
-            this.Widthe = width;
+        public Rectangle(double length, double widthe, string name)
+        {           
+            this.length = length;
+            this.widthe = widthe;
         }
 
-        public override uint PerimetrOfTheFigure()
+        public override bool IsError()
         {
-            return 2 * (Length + Widthe);
+            return (length > 0 && widthe > 0);
         }
 
-        public override uint AreaOfTheFigure()
+        public override string GetName()
+        { 
+            return "Прямоугольник";
+        }
+     
+        public override double PerimetrOfTheFigure()
+        {          
+           return 2 * (length + widthe);
+        }
+
+        public override double AreaOfTheFigure()
         {
-            return Length * Widthe;
+            return length * widthe;
         }
     }
 }
