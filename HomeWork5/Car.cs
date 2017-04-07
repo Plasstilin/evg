@@ -1,13 +1,11 @@
-﻿
-namespace HomeWork5
+﻿namespace HomeWork5
 {
     public class Car : Detail
     {
-
         string modelName = "Брусничка";
         uint howManyWheels;
         uint howManyDoors;
-        public Detail[] detailMas = new Detail [3] ;
+        public Detail[] detailMas = new Detail[3];
 
         public Car()
         {
@@ -15,14 +13,12 @@ namespace HomeWork5
 
         public Car(uint howManyWheels, uint howManyDoors)
         {
-
             this.howManyWheels = howManyWheels;
             this.howManyDoors = howManyDoors;
 
             detailMas[0] = new Wheel(4);
             detailMas[1] = new Door(5);
             detailMas[2] = new Body();
-            
         }
 
         public override string Name
@@ -34,7 +30,7 @@ namespace HomeWork5
 
         public string ModelName
         {
-             get { return modelName; }
+            get { return modelName; }
             set { value = modelName; }
         }
 

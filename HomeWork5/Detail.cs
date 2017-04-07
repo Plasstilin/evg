@@ -1,5 +1,4 @@
-﻿
-namespace HomeWork5
+﻿namespace HomeWork5
 {
     public abstract class Detail
     {
