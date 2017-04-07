@@ -21,7 +21,7 @@ namespace HomeWork3
 
             char[] strMas = varPrintPolindromTest.ToCharArray(); // из строки в массив символов char
 
-            Array.Reverse(strMas); // изменяет порядок элементов
+            Array.Reverse(strMas); // изменяет порядок элементов на обратный
 
             string rotateStr = new string(strMas);
 
@@ -37,7 +37,7 @@ namespace HomeWork3
 
         public void PrintHowManyWord()
         {
-            string[] workeMas = worke.Split(' ');
+            string[] workeMas = worke.Split(' '); // разделяет строку на подстроки 
             Console.WriteLine("Количество слов: " + workeMas.Length);
         }
 
